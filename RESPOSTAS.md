@@ -25,10 +25,12 @@ depois: return leitura * 9 / 5 + 32;
 
 ## M3 - O segredo vazado
 
-**O que voce esperava ver no `git status` e o que apareceu:**
+**O que você esperava ver no `git status` e o que apareceu:**
+Achei que o arquivo ia sumir do status. Só apareceu o `.gitignore` novo — o `credenciais.env` nem foi citado, porque ele já estava commitado antes.
 
-**Depois do push, alguem que clonar o repositorio ainda consegue ler a chave?
+**Depois do push, alguém que clonar o repositório ainda consegue ler a chave?
 Responda em duas linhas, explicando o motivo:**
+Sim, ainda dá. O `git rm --cached` só para de rastrear daqui pra frente, mas a chave continua nos commits antigos do histórico.
 
 ---
 
