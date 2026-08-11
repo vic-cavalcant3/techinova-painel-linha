@@ -1,24 +1,24 @@
 # Respostas do LAB 01
 
-Nome:
-Matricula:
-Dupla (M2 em diante):
+Nome: Victor Rodrigues Cavalcante Rocha
+Matricula: *não temos acesso a matricula ainda*
+Dupla (M2 em diante): Victor Rodrigues e Raissa Gouvea
 
 ---
 
 ## M2 - Quem quebrou o painel
 
-**Hash curto do commit que introduziu o erro:**
+**Hash curto do commit que introduziu o erro: 01ef93b **
 
-**Autor:**
+**Autor:  Tarcisio Melo <tarcisio.melo@techinova.com.br> **
 
-**Data:**
+**Data:  Mon Jun 15 22:38:00 2026 -0300 **
 
 **Linha alterada (antes e depois):**
 
 ```
-antes:
-depois:
+antes: return (leitura - 32) * 5 / 9;
+depois: return leitura * 9 / 5 + 32;
 ```
 
 ---
