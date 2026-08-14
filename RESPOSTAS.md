@@ -38,18 +38,21 @@ Sim, ainda dá. O `git rm --cached` só para de rastrear daqui pra frente, mas a
 
 **O que significavam os marcadores que apareceram dentro do arquivo:**
 
-- `<<<<<<<` :
-- `=======` :
-- `>>>>>>>` :
+- `<<<<<<<` : marca o inicio do trecho conflitante, mostrando a versao que já estava na nossa branch (HEAD) — ou seja, o que a pessoa A já tinha commitado na main.
+- `=======` : é a linha divisória, separa a nossa versão da versão que veio de fora (a branch que estamos tentando mergear).
+- `>>>>>>> painel-b` : marca o fim do trecho e mostra de onde veio a outra versão, nesse caso a branch da pessoa B.
+
+Basicamente o Git não sabe qual das duas mudanças é a "certa" porque as duas mexeram na mesma linha, então ele mostra as duas lado a lado e deixa a gente escolher manualmente.
 
 **Qual pedaco veio de quem, e qual titulo voces decidiram manter:**
 
+O trecho de cima (antes do `=======`) era o título que a pessoa A já tinha commitado na main. O de baixo (depois do `=======`) era o título da pessoa B, que ainda não tinha entrado. A gente conversou e ficou com o título de [preencher qual foi escolhido], apagando o outro e os três marcadores.
+
 ---
 
-## Casa - Incidente na linha 3
 
-**Hash do commit que quebrou o painel:**
+**Hash do commit que quebrou o painel:** 01ef93b
 
-**Hash do commit de revert:**
+**Hash do commit de revert:** 08585e5
 
-**Por que `git revert` e nao `git reset` neste caso:**
+**Por que `git revert` e nao `git reset` neste caso:** porque o commit 01ef93b já tinha sido enviado (push) pro repositório remoto e a dupla toda dependia dele. Usar `git reset` reescreveria o histórico e apagaria o commit como se ele nunca tivesse existido, o que quebra quem já puxou essa branch. O `git revert` cria um commit novo desfazendo a mudança, preservando o histórico real do que aconteceu.
