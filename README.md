@@ -9,7 +9,7 @@ Abra o arquivo `index.html` no navegador. Nao precisa de servidor web.
 ## Identificacao
 
 <!-- Escreva aqui seu nome completo e sua matricula -->
-======ALUNOS======
--Raissa Gouvea
--Victor Rodrigues
+======ALUNOS====== <br>
+-Raissa Gouvea <br>
+-Victor Rodrigues<br> 
 *obs: ainda nao temos acesso a matricula*
