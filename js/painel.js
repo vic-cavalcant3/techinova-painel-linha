@@ -6,8 +6,9 @@ async function carregarSensores() {
   sensores.forEach(desenharLinha);
 }
 
+// o sensor envia em fahrenheit, o painel precisa exibir em celsius
 function converterTemperatura(leitura) {
-  return leitura * 9 / 5 + 32;
+  return (leitura - 32) * 5 / 9;
 }
 
 function desenharLinha(sensor) {
