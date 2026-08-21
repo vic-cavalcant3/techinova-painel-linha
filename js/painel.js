@@ -26,5 +26,18 @@ function marcarAtualizacao() {
   document.querySelector('#atualizado').textContent = new Date().toLocaleString('pt-BR');
 }
 
+
+// Alerta crítico de temperatura
+function verificarAlertaCritico(temperatura) {
+  const LIMITE_CRITICO = 90;
+  if (temperatura > LIMITE_CRITICO) {
+    document.getElementById("alerta").innerHTML = "ALERTA: Temperatura crítica!";
+    document.getElementById("alerta").style.display = "block";
+  }
+}
+
+verificarAlertaCritico(temp);
+
+
 carregarSensores();
 marcarAtualizacao();
