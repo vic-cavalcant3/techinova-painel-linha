@@ -20,24 +20,25 @@ function desenharLinha(sensor) {
     '<td>' + celsius + ' C</td>' +
     '<td>ok</td>';
   TABELA.appendChild(tr);
+
+  verificarAlertaCritico(parseFloat(celsius));
 }
 
 function marcarAtualizacao() {
   document.querySelector('#atualizado').textContent = new Date().toLocaleString('pt-BR');
 }
 
-
 // Alerta crítico de temperatura
 function verificarAlertaCritico(temperatura) {
   const LIMITE_CRITICO = 90;
+  const alerta = document.getElementById("alerta");
   if (temperatura > LIMITE_CRITICO) {
-    document.getElementById("alerta").innerHTML = "ALERTA: Temperatura crítica!";
-    document.getElementById("alerta").style.display = "block";
+    alerta.textContent = "ALERTA: Temperatura crítica!";
+    alerta.style.display = "block";
+  } else {
+    alerta.style.display = "none";
   }
 }
-
-verificarAlertaCritico(temp);
-
 
 carregarSensores();
 marcarAtualizacao();
